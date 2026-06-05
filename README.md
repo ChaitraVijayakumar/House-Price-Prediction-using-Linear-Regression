@@ -52,7 +52,7 @@ jupyter notebook
 4. Run housePrices.ipynb
 
 ## requirements.txt :
-txtpandas
+pandas
 numpy
 matplotlib
 seaborn
