@@ -113,6 +113,46 @@ new_house = pd.DataFrame({
 predicted_price = model.predict(new_house)
 print(f"\nPredicted Price for sample house: ₹{predicted_price[0]:,.0f}")
 
+
+# DECISION TREE REGRESSOR 
+
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+import pickle
+
+# Using same features as before
+X = df[features]
+y = df['price']
+
+# Train-Test Split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Train Decision Tree
+dt_model = DecisionTreeRegressor(
+    max_depth=5,          # Prevents overfitting
+    random_state=42
+)
+
+dt_model.fit(X_train, y_train)
+print("Decision Tree Model Trained")
+
+# Predictions
+dt_predictions = dt_model.predict(X_test)
+
+dt_mse = mean_squared_error(y_test, dt_predictions)
+dt_r2 = r2_score(y_test, dt_predictions)
+
+print("Decision Tree Performance:")
+print(f"Mean Squared Error : {dt_mse:,.2f}")
+print(f"R² Score           : {dt_r2:.4f} ({dt_r2*100:.2f}%)")
+
+# Compare with Linear Regression
+print("\nComparison: ")
+print(f"Linear Regression R² : {r2:.4f}")
+print(f"Decision Tree R²     : {dt_r2:.4f}")
+
 import pickle
 pickle.dump(model, open("model.pkl", "wb"))
 print("Model saved successfully as model.pkl")

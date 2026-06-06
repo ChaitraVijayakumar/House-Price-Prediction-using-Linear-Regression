@@ -52,9 +52,21 @@ jupyter notebook
 4. Run housePrices.ipynb
 
 ## requirements.txt :
-pandas
+pandas\n
 numpy
 matplotlib
 seaborn
 scikit-learn
 jupyter/vs code
+
+## COMPARING LINEAR REGRESION & DECISION TREE BASED ON PERFORMANCE ##
+
+## Model Comparison:
+
+| Model                | R² Score     | MSE                     | Remarks                           |
+|----------------------|--------------|-------------------------|-----------------------------------|
+| Linear Regression    | [0.6495]     | [1,771,751,116,597.03]  | Simple & Interpretable            |
+| Decision Tree        | [0.4585]     | [2,737,130,474,262.15]  | Better at capturing non-linearity |
+
+**Observation**: 
+Linear regression excels when features share a direct, proportional relationship with the target variable, making it ideal for straightforward numeric forecasting. Conversely, a decision tree performs better when dealing with complex, non-linear relationships, multi-level feature interactions, or a mix of numeric and categorical data.
