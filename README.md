@@ -1,6 +1,6 @@
-# House-Price-Prediction-using-Linear-Regression
+# House-Price-Prediction using Linear-Regression & Decision-Tree
 ## Problem Statement
-Predict the price of a house based on various features like area, number of bedrooms, bathrooms, and other amenities using **Linear Regression**.
+Predict the price of a house based on various features like area, number of bedrooms, bathrooms, and other amenities using *Linear Regression* & *Decision Tree*.
 
 ## Dataset
 - Source: Kaggle Housing Prices Dataset
